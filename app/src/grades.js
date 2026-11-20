@@ -1,0 +1,58 @@
+// Colour grades for Sunset Cover Studio. Each grade is its own wash, sun glow
+// position, accent lettering colour and vignette strength. No grade loads
+// anything from the network; every value is a plain number or colour string.
+const GRADES = {
+  sunset: {
+    label: 'Sunset',
+    wash: [255, 122, 26],
+    washAlpha: 0.20,
+    glowX: 0.78, glowY: 0.16, glowR: 0.55,
+    glowColor: 'rgba(255, 190, 80, 0.55)',
+    accent: '#ffb347',
+    titleColor: '#ffffff',
+    subtitleColor: '#ffd28a',
+    scrimAlpha: 0.62,
+    saturate: 1.15,
+    vignette: 0.28,
+  },
+  neon: {
+    label: 'Neon',
+    wash: [255, 46, 166],
+    washAlpha: 0.16,
+    glowX: 0.20, glowY: 0.12, glowR: 0.50,
+    glowColor: 'rgba(55, 224, 216, 0.50)',
+    accent: '#ff2ea6',
+    titleColor: '#ffffff',
+    subtitleColor: '#37e0d8',
+    scrimAlpha: 0.58,
+    saturate: 1.25,
+    vignette: 0.34,
+  },
+  palm: {
+    label: 'Palm',
+    wash: [20, 180, 120],
+    washAlpha: 0.16,
+    glowX: 0.50, glowY: 0.10, glowR: 0.60,
+    glowColor: 'rgba(255, 214, 120, 0.50)',
+    accent: '#7cfc9a',
+    titleColor: '#fffbe8',
+    subtitleColor: '#a9f5c3',
+    scrimAlpha: 0.55,
+    saturate: 1.10,
+    vignette: 0.24,
+  },
+  noir: {
+    label: 'Noir',
+    wash: [10, 10, 30],
+    washAlpha: 0.30,
+    glowX: 0.82, glowY: 0.20, glowR: 0.42,
+    glowColor: 'rgba(220, 220, 255, 0.30)',
+    accent: '#e8e8e8',
+    titleColor: '#ffffff',
+    subtitleColor: '#c9c9d6',
+    scrimAlpha: 0.70,
+    saturate: 0.45,
+    vignette: 0.45,
+  },
+};
+const GRADE_IDS = Object.keys(GRADES);
