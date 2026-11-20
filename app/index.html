@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset Cover Studio — GTA 6-style cover maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Sunset Cover Studio</h1>
+  <p>Turn a photo and a caption into a multi-panel GTA 6-style poster cover, and export it as a PNG to share. Your photos never leave this machine.</p>
+</header>
+<main class="studio">
+  <section class="controls" aria-label="Cover controls">
+    <fieldset>
+      <legend>Photo — <span id="panelLabel">Panel 1 of 3</span></legend>
+      <label class="upload">Upload a photo
+        <input id="upload" type="file" accept="image/*">
+      </label>
+      <div class="row">
+        <button id="sampleBeach" type="button">Sample: Beach</button>
+        <button id="sampleBoulevard" type="button">Sample: Boulevard</button>
+      </div>
+      <button id="fillAll" type="button">Use this photo in every panel</button>
+      <label>Zoom <span id="zoomValue">100%</span>
+        <input id="zoom" type="range" min="100" max="260" value="100">
+      </label>
+      <button id="resetPan" type="button">Reset position</button>
+      <p class="hint">Click a panel in the preview to select it, then drag it to move its photo.</p>
+      <div id="panelChips" class="chips" role="group" aria-label="Panels"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Layout</legend>
+      <div id="layoutButtons" class="chips" role="group" aria-label="Layout"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Colour grade</legend>
+      <div id="gradeButtons" class="chips" role="group" aria-label="Colour grade"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Caption</legend>
+      <label>Subtitle
+        <input id="subtitle" type="text" value="Neon Nights" maxlength="40">
+      </label>
+      <label>Title
+        <input id="title" type="text" value="Sunset Heist" maxlength="40">
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Export</legend>
+      <div id="sizeButtons" class="chips" role="group" aria-label="Export size"></div>
+      <button id="exportPng" type="button" class="primary">Export PNG</button>
+      <a id="downloadLink" class="download" hidden>Download your cover</a>
+      <p class="hint" id="exportNote">Exports the cover at the size above.</p>
+    </fieldset>
+  </section>
+  <section class="stage" aria-label="Live preview">
+    <canvas id="preview" width="1080" height="1350"></canvas>
+    <p class="hint">Live preview — drag a panel to pan its photo.</p>
+  </section>
+</main>
+<script src="src/grades.js"></script>
+<script src="src/layouts.js"></script>
+<script src="src/cover.js"></script>
+<script src="src/main.js"></script>
+<script src="src/shots.js"></script>
+</body>
+</html>
